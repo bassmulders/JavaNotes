@@ -7,14 +7,18 @@ public class BinaryTreeOfInts {
 		return countNodesInternal(this.root);
 	}
 	
-	private int countNodesInternal(TreeNode node) {
-		int count = 1;
-		if (node.left != null) {
-			count = count + countNodesInternal(node.left);
+	private int countNodesInternal(TreeNode root) {
+		if (root == null) {
+			return 0;
+		} else {
+			int count = 1;
+			if (root.left != null) {
+				count += countNodesInternal(root.left);
+			}
+			if (root.right != null) {
+				count += countNodesInternal(root.right);
+			}
+			return count;
 		}
-		if (node.right != null) {
-			count = count + countNodesInternal(node.right);
-		}
-		return count;
 	}
 }
