@@ -69,6 +69,16 @@ public class LinkedList {
 		return count;
 	}
 	
+	public int getLength(Node head) {
+		int count = 0;
+		Node node = head;;
+		while (node != null) {
+			count++;
+			node = node.next;
+		}
+		return count;
+	}
+
 	private Node findNodeWithBiggestSmallerValue(Node node, String searchItem) {
 		// If the current node is null, or 
 		// the item value of the current node is larger than or equal to searchItem, then
@@ -119,7 +129,7 @@ public class LinkedList {
 	private Node mergeSort(Node a) {
 		Node oldHead = a;
 		// find the length of the linkedlist
-		int mid = this.getLength() / 2;
+		int mid = this.getLength(a) / 2;
 		if (a.next == null)
 			return a;
 		// set one pointer to the beginning of the list and another at the next
@@ -128,10 +138,10 @@ public class LinkedList {
 			oldHead = oldHead.next;
 			mid--;
 		}
-		Node newHead = oldHead.next;// make newHead points to the beginning of
+		Node newHead = oldHead.next;// make newHead point to the beginning of
 									// the second half of the list
 		oldHead.next = null;// break the list
-		oldHead = a;// make one pointer points at the beginning of the first
+		oldHead = a;// make one pointer point to the beginning of the first
 					// half of the list
 		Node t1 = mergeSort(oldHead);//make recursive calls 
 		Node t2 = mergeSort(newHead);
