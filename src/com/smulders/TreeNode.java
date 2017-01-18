@@ -1,9 +1,20 @@
 package com.smulders;
 
 public class TreeNode {
-	private int item;
-	private TreeNode left;
-	private TreeNode right;
+	public int item;
+	public TreeNode left;
+	public TreeNode right;
 	
-	
+	TreeNode() {
+		this.item = 0;
+		this.left = null;
+		this.right = null;
+	}
+
+	TreeNode(int newItem) {
+		this.item = newItem;
+		this.left = null;
+		this.right = null;
+	}
+
 }
