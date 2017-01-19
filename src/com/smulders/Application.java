@@ -6,9 +6,32 @@ public class Application {
 	static RandomStringGenerator rsg;
 
 	public static void main(String[] args) {
-		doStuffWithALinkedList();
-		doStuffWithAQueue();
+		//doStuffWithALinkedList();
+		//doStuffWithAQueue();
+		doStuffWithABinaryTree();
 	}
+	
+	private static void doStuffWithABinaryTree() {
+		BinaryTreeOfInts b = new BinaryTreeOfInts();
+		b.insert(5); System.out.println(5);
+		b.insert(6); System.out.println(6);
+		b.insert(3); System.out.println(3);
+		b.insert(19); System.out.println(19);
+		b.insert(1); System.out.println(1);
+		b.insert(25); System.out.println(25);
+		b.insert(9); System.out.println(9);
+		b.print();
+		System.out.println("Tree contains 17? " + b.contains(17));
+	}
+	
+//	level: 4; value: 1
+//	level: 3; value: 3
+//	level: 2; value: 6
+//	level: 1; value: 5
+//	level: 4; value: 9
+//	level: 3; value: 25
+//	level: 2; value: 19
+
 
 	private static void doStuffWithAQueue() {
 		QueueOfStrings q = new QueueOfStrings();
